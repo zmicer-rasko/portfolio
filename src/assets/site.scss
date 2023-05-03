@@ -1,0 +1,149 @@
+body {
+  background: white;
+  /* font-family: montserrat; */
+  /* font-family: 'Chivo Mono', monospace; */
+  //font-family: 'Press Start 2P', cursive;
+  /* font-family: 'VT323', monospace; */
+   font-family: Space Mono, monospace;
+}
+
+#app {
+  width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 1100px;
+
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  padding: 0 2.5rem;
+  position: relative;
+  clear: both;
+
+  @media only screen and (max-width: 767px) {
+    //padding: 0px 15px;
+    width: initial;
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    max-width: 680px;
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    max-width: 950px;
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {}
+}
+
+.txt-bordered {
+  color: white;
+  -webkit-text-stroke: 1px #000;
+}
+
+.uc {
+  text-transform: uppercase;
+}
+
+.f1 {
+  font-size: 120px;
+}
+
+.f2 {
+  //font-size: 25px;
+  font-size: 1.5rem;
+
+  @media only screen and (min-width: 768px) {
+    //font-size: 18px;
+    font-size: 1.125rem;
+  }
+
+  @media only screen and (max-width: 767px) {
+    //font-size: 17px;
+    font-size: 12px;
+  }
+}
+
+.f3 {
+  font-size: 1.5rem;
+
+  //@media only screen and (min-width: 768px) {
+    //font-size: 15px;
+    //font-size: 1.5rem;
+  //}
+
+  //@media only screen and (max-width: 767px) {
+    //font-size: 15px;
+    //font-size: 24px;
+  //}
+}
+
+.f5 {
+  font-size: 1.2rem;
+
+  @media only screen and (max-width: 767px) {
+  //  font-size: 0.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+.pre-bulleted {
+  position: relative;
+  line-height: 1.25rem;
+
+  &:before {
+    content: "■";
+    position: absolute;
+    left: -1rem;
+    font-size: 0.5rem;
+    top: 0;
+  }
+}
+
+.bolder {
+  font-weight: 600;
+}
+
+.black-bg {
+  //clip-path: polygon(3% 0%, 97% 0%, 100% 50%, 97% 100%, 3% 100%, 0% 50%);
+
+  background: black;
+  color: white;
+
+  margin-left: -3.25rem;
+  padding: 0.5rem 2rem 0.5rem 2rem;
+
+  clip-path: polygon(5.5% 0%, 100% 0, 94.5% 100%, 0% 100%);
+}
+
+// REM HANDLING
+html {
+  @media only screen and (max-width: 767px) {
+    font-size: 10px;
+  }
+
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    font-size: 12px;
+  }
+
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    font-size: 14px;
+  }
+
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
