@@ -11,7 +11,7 @@ export default {
         to: 'Mar 2023',
         duration: '2 years 1 month',
         company: 'Digital Basis',
-        img: '/companies/digital-basis.jpeg',
+        img: 'companies/digital-basis.jpeg',
         link: 'https://www.digitalbasis.com',
       },
       {
@@ -20,7 +20,7 @@ export default {
         to: 'Jun 2021',
         duration: '5 years 1 month',
         company: 'Estelogy',
-        img: '/companies/estelogy.jpeg',
+        img: 'companies/estelogy.jpeg',
         link: 'https://estelogy.com',
       },
       {
@@ -29,7 +29,7 @@ export default {
         to: 'Jun 2016',
         duration: '6 months',
         company: 'Freelance',
-        img: '/companies/morty.png',
+        img: 'companies/morty.png',
         link: 'me',
       }
     ],

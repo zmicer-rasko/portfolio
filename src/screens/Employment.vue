@@ -101,7 +101,7 @@ export default {
         to: 'By now',
         duration: duration,
         company: 'Unemployed / Freelancer',
-        img: '/companies/godmode.png',
+        img: 'companies/godmode.png',
         link: 'me',
       };
     }
