@@ -20,5 +20,10 @@ npm run build
 npm run lint
 ```
 
+### DEPLOY TO GITHUB PAGES
+```
+sh deploy.sh
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
