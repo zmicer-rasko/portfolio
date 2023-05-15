@@ -307,7 +307,7 @@ h3 {
     bottom: -60px;
     left: -10px;
     height: 30vh;
-    width: 50vw;
+    width: 65vw;
   }
 }
 </style>
