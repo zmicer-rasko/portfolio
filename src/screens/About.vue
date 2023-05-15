@@ -20,7 +20,7 @@
               <span>{{ age }}</span>
             </div>
             <div class="about-item-line">
-              <span class="bolder">Occupation</span>
+              <span class="bolder">Location</span>
               <span>Turkey/Antalya</span>
             </div>
           </div>
@@ -28,9 +28,9 @@
 
         <div class="about-bottom">
           <ul class="short-list f5">
-            <li class="pre-bulleted">Enjoy creating solutions for both <b>backend</b> and <b>frontend</b> sides of web and mobile applications / SaaS / Platforms.</li>
+            <li class="pre-bulleted">Creating solutions for both <b>backend</b> and <b>frontend</b> sides of web and mobile applications / SaaS / Platforms.</li>
             <li class="pre-bulleted">Worked on a variety of <b>startup projects</b> from inception or providing ongoing support (<b>80% of career</b>), as well as on <b>established products</b> with higher performance, testing, tech debt and infrastructure requirements (<b>20% of carrer</b>).</li>
-            <li class="pre-bulleted">Experience in domains such as SaaS, live-streaming, telemedicine, travel tickets booking, marketing, real estate booking and managing, content marketplace platforms, social media automation, recruiting platforms, Android/iOS applications, back-office tools, APIs integration and development, SaaS, etc.</li>
+            <li class="pre-bulleted">Experience in domains such as SaaS, live-streaming, telemedicine, travel tickets booking, marketing, real estate booking and managing, content marketplace platforms, social media automation, recruiting platforms, Android/iOS applications, back-office tools, APIs integration and development, etc.</li>
             <li class="pre-bulleted">Most recent stack: PHP (Laravel), VueJS, MySQL, Redis, Docker.</li>
           </ul>
         </div>
