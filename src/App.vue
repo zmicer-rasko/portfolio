@@ -8,6 +8,7 @@
     <Highlights/>
     <Employment />
     <Skills/>
+    <RecentProjects/>
     <ContactMe/>
 <!--    <Projects/>-->
 <!--    <FilterComponent/>-->
@@ -21,6 +22,7 @@ import About from './screens/About.vue'
 import Highlights from './screens/Highlights.vue'
 import Employment from './screens/Employment.vue'
 import Skills from './screens/Skills.vue'
+import RecentProjects from "./screens/RecentProjects";
 import ContactMe from './screens/ContactMe.vue'
 
 import ContactsBar from './components/ContactsBar.vue'
@@ -28,6 +30,8 @@ import ContactsBar from './components/ContactsBar.vue'
 // import FilterComponent from './components/FilterComponent.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
+
+
 
 export default {
   name: 'App',
@@ -42,6 +46,7 @@ export default {
     Highlights,
     Employment,
     Skills,
+    RecentProjects,
     ContactMe,
     ContactsBar,
     // Projects,
