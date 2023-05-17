@@ -21,7 +21,11 @@
             </div>
             <div class="about-item-line">
               <span class="bolder">Location</span>
-              <span>Turkey/Antalya</span>
+              <span>Antalya/Turkey</span>
+            </div>
+            <div class="about-item-line">
+              <span class="bolder">Origin</span>
+              <span>Minsk/Belarus</span>
             </div>
           </div>
         </div>
