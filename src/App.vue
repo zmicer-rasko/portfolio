@@ -3,7 +3,7 @@
 <!--    <img src="https://i.giphy.com/media/l3nWhI38IWDofyDrW/giphy.webp" alt="">-->
 <!--  </div>-->
 <!--  <div v-else>-->
-    <Intro/>
+    <Intro v-if="!isPrint" />
     <About/>
     <Highlights/>
     <Employment />
@@ -13,7 +13,7 @@
 <!--    <Projects/>-->
 <!--    <FilterComponent/>-->
 <!--  </div>-->
-    <ContactsBar/>
+    <ContactsBar v-if="!isPrint" />
 </template>
 
 <script>
@@ -30,8 +30,6 @@ import ContactsBar from './components/ContactsBar.vue'
 // import FilterComponent from './components/FilterComponent.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
-
-
 
 export default {
   name: 'App',
@@ -64,7 +62,10 @@ export default {
       once: false, // whether animation should happen only once - while scrolling down
       anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
     });
-  }
+  },
+  computed: {
+    isPrint() { return this.$store.getters['system/isPrint']; }
+  },
 }
 </script>
 

@@ -5,7 +5,7 @@
         <screen-title id="contacts-title-item" title="Contacts"/>
       </div>
 
-      <div class="contacts-wrapper">
+      <div class="contacts-wrapper" v-if="!isPrint">
         <div class="contact-source tg" @click="telegram" @mouseover="onHover('telegram')" @mouseout="onHoverOut('telegram')" data-aos="flip-up">
           <span class="tg">Telegram</span>
           <svg :fill="fill.telegram" height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 485 485" xml:space="preserve">
@@ -44,7 +44,24 @@
         </div>
       </div>
 
-<!--      <div class="dotted-divider"></div>-->
+      <div class="website" v-if="isPrint">
+        <div class="print-contact-item-line">
+          <span class="bolder">Website</span>
+          <span>https://zmicer-rasko.github.io/portfolio</span>
+        </div>
+        <div class="print-contact-item-line">
+          <span class="bolder">Email</span>
+          <span>zmicer.rasko@gmail.com</span>
+        </div>
+        <div class="print-contact-item-line">
+          <span class="bolder">LinkedIn</span>
+          <span>https://www.linkedin.com/in/dmitry-rasko-4749a311b/</span>
+        </div>
+        <div class="print-contact-item-line">
+          <span class="bolder">Telegram</span>
+          <span>https://t.me/d_1_2_3_4</span>
+        </div>
+      </div>
 
     </div>
   </div>
@@ -70,6 +87,7 @@ export default {
   },
   computed: {
     exp() { return this.$store.getters['experience/data']; },
+    isPrint() { return this.$store.getters['system/isPrint']; },
   },
   methods: {
     mail() {
@@ -195,6 +213,39 @@ export default {
   }
 }
 
+.print-contact-item-line {
+  margin-bottom: 10px;
+  overflow: hidden;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  span {
+    overflow: hidden;
+    background: white;
+  }
+
+  span + span {
+    float: right;
+    padding-left: 10px;
+  }
+
+  span:first-of-type {
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 10px;
+  }
+
+  &:before {
+    float: left;
+    width: 0;
+    white-space: nowrap;
+    content: "....................................................................................................................";
+    //content: "+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=";
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .contacts-wrapper {
     width: 100%;
@@ -215,5 +266,10 @@ export default {
     font-size: 10px;
     margin-top: 0;
   }
+}
+
+.website {
+  width: 70%;
+  margin: 0 15% 50px 15%;
 }
 </style>
