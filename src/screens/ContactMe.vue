@@ -44,7 +44,7 @@
         </div>
       </div>
 
-      <div class="website" v-if="isPrint">
+      <div class="website f5" v-if="isPrint">
         <div class="print-contact-item-line">
           <span class="bolder">Website</span>
           <span>https://zmicer-rasko.github.io/portfolio</span>
@@ -269,7 +269,7 @@ export default {
 }
 
 .website {
-  width: 70%;
-  margin: 0 15% 50px 15%;
+  width: 80%;
+  margin: 50px 10% 100px 10%;
 }
 </style>
