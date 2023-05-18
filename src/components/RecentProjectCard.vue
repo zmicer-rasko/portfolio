@@ -34,10 +34,9 @@
               :pagination="{ clickable: true }"
               :centeredSlides="1"
               @swiper="init"
-              @click="openOverlayImg"
       >
         <swiper-slide v-for="(image, index) in project.images">
-          <img :src="'/projects' + image" :alt="project.title + ' ' + index">
+          <img :src="'projects' + image" :alt="project.title + ' ' + index">
         </swiper-slide>
       </swiper>
       <div v-else>
