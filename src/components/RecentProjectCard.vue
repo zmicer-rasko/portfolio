@@ -1,45 +1,53 @@
 <template>
-  <div class="card">
+  <div class="card f5">
+    <div class="card-top-block">
+      <div class="card-body-wrapper">
+        <div v-if="project.url" class="link-wrapper">
+          <span class="card-subtitle">Url: </span>
+          <a :href="project.url">{{ project.url }}</a>
+        </div>
+        <div>
+          <span class="card-subtitle">Year:</span>
+          <span>{{ project.year }}</span>
+        </div>
+        <div>
+          <span class="card-subtitle">Duration:</span>
+          <span>{{ project.duration }}</span>
+        </div>
+        <div class="tags">
+          <span class="card-subtitle">Roles: </span>
+          <tag v-for="(item, key) in project.roles" :key="key" :title="item" size="sm"></tag>
+        </div>
+        <div class="tags">
+          <span class="card-subtitle">Stack: </span>
+          <tag v-for="(item, key) in project.stack" :key="key" :title="item" size="sm"></tag>
+        </div>
+      </div>
+    </div>
+
     <div class="card-image-wrapper">
-<!--            navigation-->
-        <swiper v-if="project.images.length > 0"
-            :modules="swiperModules"
-            :scrollbar="{ draggable: true }"
-            :pagination="{ clickable: true }"
-            :centeredSlides="1"
-            @swiper="init"
-        >
-          <swiper-slide v-for="(image, index) in project.images">
-            <img :src="'/projects' + image" :alt="project.title + ' ' + index">
-          </swiper-slide>
-        </swiper>
+      <swiper v-if="project.images.length > 0"
+              navigation
+              :keyboard="{ enabled: true }"
+              :modules="swiperModules"
+              :scrollbar="{ draggable: true }"
+              :pagination="{ clickable: true }"
+              :centeredSlides="1"
+              @swiper="init"
+              @click="openOverlayImg"
+      >
+        <swiper-slide v-for="(image, index) in project.images">
+          <img :src="'/projects' + image" :alt="project.title + ' ' + index">
+        </swiper-slide>
+      </swiper>
       <div v-else>
         <img src="/img/project.png" alt="">
       </div>
     </div>
-    <div class="card-body-wrapper f5">
-      <div v-if="project.url" class="link-wrapper">
-        <span class="card-subtitle">Url: </span>
-        <a :href="project.url">{{ project.url }}</a>
-      </div>
-      <div>
-        <span class="card-subtitle">Year:</span>
-        <span>{{ project.year }}</span>
-      </div>
-      <div>
-        <span class="card-subtitle">Duration:</span>
-        <span>{{ project.duration }}</span>
-      </div>
-      <div class="tags">
-        <span class="card-subtitle">Roles: </span>
-        <tag v-for="(item, key) in project.roles" :key="key" :title="item" size="sm"></tag>
-      </div>
-      <div class="tags">
-        <span class="card-subtitle">Stack: </span>
-        <tag v-for="(item, key) in project.stack" :key="key" :title="item" size="sm"></tag>
-      </div>
-      <div>
-        <span class="card-subtitle">Description:</span>
+
+    <div class="card-bottom-block">
+      <div class="card-description">
+        <div class="card-subtitle">Description:</div>
         <span>{{ project.description }}</span>
       </div>
       <div>
@@ -49,18 +57,23 @@
         </ul>
       </div>
     </div>
+
     <div class="corner-left-top" :text="project.title.toUpperCase()"></div>
     <div class="date corner-right-top"></div>
     <div class="date corner-right-bot"></div>
     <div class="date corner-left-bot"></div>
+    
+    <div class="image-overlay">
+      <img src="" alt="">
+    </div>
   </div>
 </template>
 
 <script>
 
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import { Scrollbar } from 'swiper';
-import { Navigation } from 'swiper';
+import { Scrollbar, Navigation, Keyboard } from 'swiper';
+
 import Tag from './Tag.vue';
 
 import 'swiper/css';
@@ -83,8 +96,7 @@ export default {
   },
   data() {
     return {
-      // swiperModules: [Navigation, Scrollbar],
-      swiperModules: [ Scrollbar ],
+      swiperModules: [Keyboard, Navigation, Scrollbar],
     };
   },
 }
@@ -101,20 +113,23 @@ $date-opacity: 0.7;
 
 .swiper {
   height: 100%;
+  width: 50%;
 }
 
 .card {
-  width: 100%;
+  //width: 100%;
   height: 100%;
   display: flex;
-  align-items: flex-start;
   flex: 45%;
-  margin: 50px 20px;
-  flex-direction: row;
+  margin: 100px 0;
+  flex-direction: column;
   background: transparent;
-  padding: 25px;
+  //padding: 25px;
   position: relative;
   line-height: 20px;
+
+  width: 90%;
+  padding: 5%;
 
   .corner-left-top, .corner-right-bot, .corner-right-top, .corner-left-bot {
     position: absolute;
@@ -144,7 +159,7 @@ $date-opacity: 0.7;
       font-weight: 500;
       //font-size: 16px;
 
-      font-size: 12px;
+      font-size: 0.75rem;
       font-family: 'Press Start 2P', monospace;
       color: white;
       padding: 0.5rem;
@@ -244,11 +259,18 @@ $date-opacity: 0.7;
   }
 
   .card-image-wrapper {
-    margin-bottom: 10px;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+
+    margin-bottom: 3rem;
+    margin-top: 3rem;
 
     height: 200px;
-    width: 300px;
+    //width: 300px;
 
     img {
       height: 100%;
@@ -256,14 +278,10 @@ $date-opacity: 0.7;
 
   }
   .card-body-wrapper {
-    padding-left: 15px;
+    //padding-left: 15px;
     margin-top: 5px;
     width: 100%;
     height: 100%;
-
-    div {
-      line-height: 2rem;
-    }
 
     .card-title {
       text-transform: uppercase;
@@ -276,12 +294,6 @@ $date-opacity: 0.7;
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-    }
-
-    .card-subtitle {
-      font-family: 'Courier New', serif;
-      font-weight: 700;
-      margin-right: 10px;
     }
   }
 
@@ -329,6 +341,64 @@ $date-opacity: 0.7;
 }
 .swiper-button-next, .swiper-button-prev {
   color: black;
+}
+.card-top-block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+.card-subtitle {
+  font-family: 'Courier New', serif;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.card-bottom-block {
+  margin-bottom: 2rem;
+}
+
+.card-top-block, .card-bottom-block {
+  line-height: 1.5rem;
+}
+.card-description {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 768px) {
+  .corner-right-top, .corner-right-bot {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 767px) and (min-width: 468px) {
+  .corner-right-top, .corner-right-bot {
+    display: none;
+  }
+
+  .card {
+    width: 90%;
+    padding: 5%;
+  }
+
+  .card .corner-left-top:after {
+    font-size: 0.5rem;
+  }
+
+  .swiper {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 467px) {
+  .corner-left-bot,
+  .corner-right-bot,
+  .corner-left-top,
+  .corner-right-top {
+    display: none;
+  }
+  .card {
+    padding: 0;
+  }
 }
 
 </style>
