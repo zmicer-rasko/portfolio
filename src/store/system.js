@@ -6,7 +6,7 @@ export default {
   },
   state: {
     data: {
-      printVersion: true,
+      printVersion: false,
     }
   }
 };

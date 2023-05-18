@@ -39,6 +39,10 @@
           </ul>
         </div>
 
+        <div id="download-wrapper">
+          <a class="f2" href="/ZmicerRasko_Laravel_VueJS_PHP_Fullstack.png" download>Download cv</a>
+        </div>
+
       </div>
     </div>
   </div>
@@ -57,11 +61,16 @@ export default {
   computed: {
     age() {
       return moment().diff('1989-11-21', 'years');
-    }
+    },
   },
   mounted() {
     PowerGlitch.glitch('#about-my-image', { playMode: 'hover' })
     PowerGlitch.glitch('#about-title', { playMode: 'hover' })
+  },
+  methods: {
+    downloadCv() {
+
+    }
   },
 }
 </script>
@@ -215,5 +224,23 @@ b {
   text-decoration: underline;
   text-decoration-style: dashed;
   text-underline-position: under;
+}
+
+#download-wrapper {
+  margin-top: 5rem;
+
+  a {
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+    padding: 1rem;
+    background-color: black;
+    border: none;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 </style>
