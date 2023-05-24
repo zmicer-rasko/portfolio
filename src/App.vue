@@ -3,6 +3,7 @@
 <!--    <img src="https://i.giphy.com/media/l3nWhI38IWDofyDrW/giphy.webp" alt="">-->
 <!--  </div>-->
 <!--  <div v-else>-->
+    <router-view></router-view>
     <Intro v-if="!isPrint" />
     <About/>
     <Highlights/>
