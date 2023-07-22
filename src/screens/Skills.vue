@@ -36,7 +36,9 @@ export default {
     exp() { return this.$store.getters['experience/data']; },
   },
   mounted() {
-    PowerGlitch.glitch('#skills-title-item', { playMode: 'hover' })
+    if (!this.isPdf) {
+      PowerGlitch.glitch('#skills-title-item', { playMode: 'hover' })
+    }
   },
 }
 </script>

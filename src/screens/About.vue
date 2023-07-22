@@ -39,8 +39,8 @@
           </ul>
         </div>
 
-        <div id="download-wrapper">
-          <a class="f2" href="/ZmicerRasko_Laravel_VueJS_PHP_Fullstack.png" download>Download cv</a>
+        <div id="download-wrapper" v-if="!isPdf">
+          <a class="f2" href="/CV_Fullstack_Laravel_VueJS_DmitryRassoshenko.pdf" download>Download cv</a>
         </div>
 
       </div>
@@ -64,12 +64,9 @@ export default {
     },
   },
   mounted() {
-    PowerGlitch.glitch('#about-my-image', { playMode: 'hover' })
-    PowerGlitch.glitch('#about-title', { playMode: 'hover' })
-  },
-  methods: {
-    downloadCv() {
-
+    if (!this.isPdf) {
+      PowerGlitch.glitch('#about-my-image', { playMode: 'hover' })
+      PowerGlitch.glitch('#about-title', { playMode: 'hover' })
     }
   },
 }

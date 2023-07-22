@@ -5,7 +5,7 @@
         <screen-title id="contacts-title-item" title="Contacts"/>
       </div>
 
-      <div class="contacts-wrapper" v-if="!isPrint">
+      <div class="contacts-wrapper" v-if="!isPdf">
         <div class="contact-source tg" @click="telegram" @mouseover="onHover('telegram')" @mouseout="onHoverOut('telegram')" data-aos="flip-up">
           <span class="tg">Telegram</span>
           <svg :fill="fill.telegram" height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 485 485" xml:space="preserve">
@@ -44,22 +44,22 @@
         </div>
       </div>
 
-      <div class="website f5" v-if="isPrint">
+      <div class="website f5" v-if="isPdf">
         <div class="print-contact-item-line">
           <span class="bolder">Website</span>
-          <span>https://zmicer-rasko.github.io/portfolio</span>
+          <span><a href="https://zmicer-rasko.github.io/portfolio">https://zmicer-rasko.github.io/portfolio</a></span>
         </div>
         <div class="print-contact-item-line">
           <span class="bolder">Email</span>
-          <span>zmicer.rasko@gmail.com</span>
+          <span><a href="mailto:zmicer.rasko@gmail.com">zmicer.rasko@gmail.com</a></span>
         </div>
         <div class="print-contact-item-line">
           <span class="bolder">LinkedIn</span>
-          <span>https://www.linkedin.com/in/dmitry-rasko-4749a311b/</span>
+          <span><a href="https://www.linkedin.com/in/dmitry-rasko-4749a311b">https://www.linkedin.com/in/dmitry-rasko-4749a311b</a></span>
         </div>
         <div class="print-contact-item-line">
           <span class="bolder">Telegram</span>
-          <span>https://t.me/d_1_2_3_4</span>
+          <span><a href="https://t.me/d_1_2_3_4">https://t.me/d_1_2_3_4</a></span>
         </div>
       </div>
 
@@ -87,7 +87,6 @@ export default {
   },
   computed: {
     exp() { return this.$store.getters['experience/data']; },
-    isPrint() { return this.$store.getters['system/isPrint']; },
   },
   methods: {
     mail() {
@@ -141,8 +140,10 @@ export default {
       "pulse": false
     }
 
-    PowerGlitch.glitch('#contacts-title-item', { playMode: 'hover' });
-    PowerGlitch.glitch('.contact-source', glitchConf);
+    if (!this.isPdf) {
+      PowerGlitch.glitch('#contacts-title-item', { playMode: 'hover' });
+      PowerGlitch.glitch('.contact-source', glitchConf);
+    }
   },
 }
 </script>

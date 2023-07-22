@@ -98,7 +98,9 @@ export default {
     }
   },
   mounted() {
-    PowerGlitch.glitch('#highlights-title-item', { playMode: 'hover' })
+    if (!this.isPdf) {
+      PowerGlitch.glitch('#highlights-title-item', { playMode: 'hover' })
+    }
   },
 }
 </script>

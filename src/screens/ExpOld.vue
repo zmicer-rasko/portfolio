@@ -76,7 +76,7 @@
 </template>
 
 <script>
-import Tag from '../components/Tag.vue';
+import Tag from '../pages/ProjectList/Tag.vue';
 import Divider from '../components/Divider.vue';
 import ScreenTitle from '../components/ScreenTitle';
 
