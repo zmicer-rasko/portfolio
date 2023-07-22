@@ -1,6 +1,8 @@
 <template>
-  <div id="filter" :class="{ 'fade-in': tags.length, 'fade-out': !tags.length }">
-    <div class="container filter-container">
+  <div id="filter">
+<!--  <div id="filter" :class="{ 'fade-in': tags.length, 'fade-out': !tags.length }">-->
+<!--    <div class="container filter-container">-->
+    <div class="filter-container">
       <div class="filter-wrapper">
         <div class="title">Projects filter:</div>
         <div class="tags-wrapper">
@@ -26,7 +28,8 @@ export default {
     clearFilter() {
       this.$store.commit('projects/filterPurge');
       this.$store.commit('projects/reset');
-      this.emitter.emit("scroll-to-projects");
+      this.$emit('updated');
+      // this.emitter.emit("scroll-to-projects");
     }
   }
 }
@@ -37,12 +40,14 @@ export default {
     min-height: 50px;
     display: flex;
     flex-direction: row;
+    padding: 0;
   }
   #filter {
+    z-index: 99;
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
-    bottom: 0;
-    min-height: 50px;
     background: linear-gradient(0deg, rgba(0,0,0,0.9598214285714286) 0%, rgba(0,0,0,0.8533788515406162) 67%, rgba(0,0,0,0.7161239495798319) 84%, rgba(0,0,0,0.6096813725490196) 100%);
     color: white;
 
@@ -60,7 +65,7 @@ export default {
     }
 
     .tags-wrapper {
-      width: 90%;
+      width: 80%;
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;

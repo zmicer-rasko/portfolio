@@ -32,8 +32,7 @@
               :modules="swiperModules"
               :scrollbar="{ draggable: true }"
               :pagination="{ clickable: true }"
-              :centeredSlides="1"
-              @swiper="init"
+              :centeredSlides="true"
       >
         <swiper-slide v-for="(image, index) in project.images">
           <img :src="'projects' + image" :alt="project.title + ' ' + index">
@@ -73,7 +72,7 @@
 import { Swiper, SwiperSlide } from 'swiper/vue';
 import { Scrollbar, Navigation, Keyboard } from 'swiper';
 
-import Tag from './Tag.vue';
+import Tag from '../pages/ProjectList/Tag.vue';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -101,7 +100,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 $corner-border-width: 90px;
 $date-corner-width: 45px;
 $corner-gap: 5px;

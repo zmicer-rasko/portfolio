@@ -5,6 +5,9 @@ export default {
     filters: state => state.filters,
     filteredData: state => state.filteredData,
     recentProjects: state => state.recentProjects,
+    getProjectBySlug: (state) => (slug) => {
+      return state.data.find((item) => item.slug === slug);
+    },
   },
   mutations: {
     reset(state) {
@@ -50,7 +53,8 @@ export default {
     filteredData: [],
     data: [
       {
-          title: "Front-end developers mentoring",
+        slug: "frontend-developers-mentoring",
+        title: "Front-end developers mentoring",
           tasks: [
             'Studying plan development',
             'Mentoring and Tutoring',
@@ -67,7 +71,8 @@ export default {
           tags: [],
       },
       {
-          title: "Saas solution for crafters",
+        slug: "saas-solution-for-crafters-with-social-network-features",
+        title: "Saas solution for crafters",
           url: null,
           tasks: [
               'Prototyping and implementing from scratch',
@@ -87,7 +92,8 @@ export default {
           tags: [],
       },
       {
-          title: "Statistic/Interactive widget app for casino gaming streamers",
+          slug: "interactive-statistics-widget-app-gaming-streamers",
+          title: "Statistic widget for gaming streamers",
           url: 'https://slotsstreaming.pro/lp',
           tasks: [
               'Prototyping and implementing from scratch',
@@ -107,7 +113,8 @@ export default {
           tags: [],
       },
       {
-          title: 'Photobooth media management SaaS constructor for event-agencies',
+        slug: 'photobooth-media-management-saas-constructor-for-event-agencies',
+        title: 'Photobooth SaaS constructor for event-agencies',
           url: 'https://www.eventkite.co/',
           tasks: [
             "Prototyping and implementing from scratch",
@@ -129,7 +136,8 @@ export default {
           tags: [],
       },
       {
-          title: 'Social networks scheduled posting saas app',
+        slug: 'social-network-schedule-posting-saas',
+        title: 'Social networks scheduled posting saas app',
           url: null, // TODO
           tasks: [
             "Server management & queue management",
@@ -149,7 +157,8 @@ export default {
           tags: [],
       },
       {
-        title: 'Countryside mobile navigator app',
+        slug: 'countryside-mobile-navigator-app-with-audio-guide',
+        title: 'Countryside navigator mobile app',
         url: null,
         tasks: [
           'Prototyping and implementing from scratch',
@@ -174,6 +183,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'nightclubs-mobile-app',
         title: 'Nightclubs search & book mobile app',
         url: 'https://www.partyr.com.au/',
         tasks: [
@@ -199,7 +209,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Discount aggregator app',
+        slug: 'discount-aggregator-mobile-app-backend',
+        title: 'Discount aggregator mobile app',
         url: 'https://cartame.by/',
         tasks: [
           'developing v2 api for mobile application',
@@ -219,6 +230,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'green-travel-avia-ticket-service-for-business',
         title: 'Green travel ticket service',
         url: null,
         tasks: [
@@ -240,7 +252,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Multilingual content creation agency',
+        slug: 'multilingual-content-creation-platform',
+        title: 'Multilingual content creation platform',
         url: 'https://greatcontent.com',
         tasks: [
           'Backend & Frontend: support, bugfixing, new functionality developing',
@@ -258,6 +271,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'saas-for-real-estate-booking-and-property-managing',
         title: 'Business system for real estate booking',
         url: null,
         tasks: [
@@ -283,6 +297,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'internship-platform',
         title: 'Internship platform',
         url: 'https://doorofclubs.com/',
         tasks: [
@@ -308,7 +323,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Travel ticket service with social network features',
+        slug: 'travel-booking-service-with-social-network-features',
+        title: 'Train booking social network',
         url: null,
         tasks: [
           'Creating project & application architecture',
@@ -342,6 +358,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'telemedicine-saas',
         title: 'Telemedicine service',
         // url: 'https://doconline.lv/en/home', TODO WEBARCHIVE
         url: 'null',
@@ -366,7 +383,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Online catalog for lighting devices retailer',
+        slug: 'catalog-for-lighting-devices-retailer',
+        title: 'Online catalog for lamps retailer',
         url: null,
         tasks: [
           'Symfony establishment',
@@ -389,7 +407,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Wordpress custom plugin',
+        slug: 'wp-custom-vuejs-plugin',
+        title: 'Wordpress vuejs custom plugin',
         // TODO REPLACE DATES - DATES ARE WRONG
         url: 'https://www.loom.com/share/369b51b2d292466497cf4d64f7cc8b02',
         tasks: [
@@ -412,6 +431,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'wp-personal-page-for-dog-trainer',
         title: 'Personal blog for dog-trainer',
         url: 'http://shap-dog-training.by',
         tasks: [
@@ -431,7 +451,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Email-marketing automation for restaurant business',
+        slug: 'email-marketing-automation-platform-for-bookings-from-horeca',
+        title: 'Email-marketing for HORECA',
         url: null,
         tasks: [
           'Database and project architecture development',
@@ -451,7 +472,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Backoffice Admin web-service for managing certification courses',
+        slug: 'admin-backoffice-huge-xml-soap-api-consumation',
+        title: 'Backoffice for education platform',
         url: 'https://biiab.co.uk/',
         tasks: [
           'SOAP API bulk-data synchronization',
@@ -478,6 +500,7 @@ export default {
       },
 
       {
+        slug: 'lp-for-construction-goods',
         title: 'Landing Page for construction goods',
         url: null,
         tasks: [
@@ -496,7 +519,8 @@ export default {
         tags: [],
       },
       {
-        title: 'SEO | UX optimization projects',
+        slug: 'seo-and-ux-optimizations-studio',
+        title: 'SEO & UX optimization projects',
         url: null,
         tasks: [
           'Micro-markup templates injections',
@@ -517,6 +541,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'bootstrap-integration-and-responsive-for-huge-autoparts-shop',
         title: 'Autoparts online-shop mobile redesign',
         url: null,
         tasks: [
@@ -536,6 +561,7 @@ export default {
         tags: [],
       },
       {
+        slug: 'custom-php-mvc-from-scratch',
         title: 'Custom MVC engine',
         url: null,
         tasks: [
@@ -563,7 +589,8 @@ export default {
         tags: [],
       },
       {
-        title: 'Homepage templating | Software for crafting',
+        slug: 'drupal-bootstrap-product-lp',
+        title: 'Product LP templating for app',
         url: 'http://chudibeads.com',
         tasks: [
           'Creating AIDA marketing model for page structure',

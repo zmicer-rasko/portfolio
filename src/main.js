@@ -6,16 +6,18 @@ import './assets/site.scss';
 import VueSmoothScroll from 'vue3-smooth-scroll' // https://www.npmjs.com/package/vue3-smooth-scroll
 import mitt from 'mitt';
 
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHashHistory, createWebHistory } from 'vue-router';
 import { routes } from './routes';
 
 const router = createRouter({
-    history: createWebHashHistory(),
+    history: createWebHistory(),
     routes,
 })
 
 const app = createApp(App);
 const emitter = mitt();
+
+app.config.globalProperties.isPdf = false;
 
 app.use(router);
 app.use(store);
