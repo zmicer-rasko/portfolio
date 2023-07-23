@@ -57,13 +57,13 @@ export default {
     margin-left: 10px;
     height: 30px;
     width: auto;
-    background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
-    border-radius:5px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:1vw;
-    font-weight:bold;
+    //background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
     margin-bottom: 5px;
 
     &:hover {
@@ -77,7 +77,7 @@ export default {
     }
 
     span {
-      padding: 5px;
+      padding: 1px;
       margin: 0 2px;
       border-radius: 4px;
       background-color:#191919;

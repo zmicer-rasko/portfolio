@@ -40,7 +40,7 @@
         </div>
 
         <div id="download-wrapper" v-if="!isPdf">
-          <a class="f2" href="/CV_Fullstack_Laravel_VueJS_DmitryRassoshenko.pdf" download>Download cv</a>
+          <a class="f2" href="CV_Fullstack_Laravel_VueJS_DmitryRassoshenko.pdf" download>Download cv</a>
         </div>
 
       </div>

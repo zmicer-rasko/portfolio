@@ -16,11 +16,11 @@
         </div>
         <div class="tags">
           <span class="card-subtitle">Roles: </span>
-          <tag v-for="(item, key) in project.roles" :key="key" :title="item" size="sm"></tag>
+          <tag v-for="(item, key) in project.roles" :key="key" :title="item"></tag>
         </div>
         <div class="tags">
           <span class="card-subtitle">Stack: </span>
-          <tag v-for="(item, key) in project.stack" :key="key" :title="item" size="sm"></tag>
+          <tag v-for="(item, key) in project.stack" :key="key" :title="item"></tag>
         </div>
       </div>
     </div>
@@ -324,11 +324,11 @@ $date-opacity: 0.7;
     top: 0;
   }
 }
-.rainbow-button span {
-  line-height: 10px;
-  font-family: "Space Mono", monospace;
-  font-size: 1rem;
-}
+//.rainbow-button span {
+//  line-height: 10px;
+//  font-family: "Space Mono", monospace;
+//  font-size: 1rem;
+//}
 .card .card-image-wrapper img {
   width: initial;
 }
